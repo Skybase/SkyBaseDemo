@@ -7,6 +7,7 @@
 //
 
 #import "SBDViewController.h"
+#import "SkyBase.h"
 
 @interface SBDViewController ()
 
@@ -18,6 +19,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSDictionary *userData = [[NSDictionary alloc] initWithObjectsAndKeys:
+                              @"skybase", @"username",
+                              @"5ky6453", @"password",
+                              nil];
+    [SkyBase createUserInBackground:userData withBlock:^(NSString *result) {
+        NSLog(@"%@",result);
+    }];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SBDViewController : UIViewController
-
+- (void)createUserInBackground:(NSDictionary*)data withCallback:(void (^)(NSString *))callback;
 @end
